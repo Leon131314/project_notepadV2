@@ -9,7 +9,7 @@ export default function notes(props) {
                                 return (
                                     <li key={note.id}>{note.task}
                                             <button onClick={e => {
-                                                    props.remove(e, note.id)
+                                                    props.remove(e, note)
                                                     console.log(e.target)
                                                     console.log(note.id)
                                             }}>Remove

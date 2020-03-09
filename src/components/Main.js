@@ -41,7 +41,8 @@ export default class Main extends React.Component {
         // console.log(array);
         // console.log(event.target);
         // console.log(id);
-            array.splice(id, 1);
+        const index = array.indexOf(id);
+        array.splice(index, 1);
             this.setState({notes: array});
     }
 
