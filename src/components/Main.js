@@ -35,19 +35,20 @@ export default class Main extends React.Component {
         });
     };
 
-    removeNote(note) {
-        console.log('xx');
-        this.setState(prevState => ({
-            notes: prevState.notes.filter(el => el !== note)
-        }));
-    };
+
+    removeNote(event, id) {
+        const array = [...this.state.notes];
+        // console.log(array);
+        // console.log(event.target);
+        // console.log(id);
+            array.splice(id, 1);
+            this.setState({notes: array});
+    }
 
 
     render() {
 
         const {notes} = this.state;
-        const {check} = this.state.notes;
-        // const {remove} = this.testNote();
         return (
             <div className = "Main">
                 <div>
@@ -62,8 +63,7 @@ export default class Main extends React.Component {
                     </form>
                     <button onClick={this.addNote}>Add</button>
                 </div>
-                {/*<Notes class="notes" notes={notes} removeNote={this.removeNote} check={check} />*/}
-                <Notes class="notes" notes={notes} removeNote={this.removeNote} check={check} />
+                <Notes class="notes" notes={notes}  remove={this.removeNote} />
 
             </div>
         );
