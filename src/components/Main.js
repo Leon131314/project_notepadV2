@@ -2,6 +2,10 @@ import React from 'react';
 import uuid from 'uuid';
 import Notes from './Notes';
 import Editor from '../monaco/Editor'
+import returnValue from '../monaco/Editor'
+
+
+
 
 export default class Main extends React.Component {
     constructor(props) {
@@ -28,6 +32,8 @@ export default class Main extends React.Component {
     }
 
     handleChangeCode(event) {
+        console.log(event.target)
+
         this.setState({
             ...this.state,
             code: event.target.value
@@ -38,7 +44,8 @@ export default class Main extends React.Component {
         this.setState({
             notes: this.state.notes.concat([{
                 id: uuid.v4(),
-                note: this.state.note
+                note: this.state.note,
+                code: this.state.code
             }])
         });
     };
@@ -54,10 +61,9 @@ export default class Main extends React.Component {
             this.setState({notes: array});
     }
 
-
     render() {
-
         const {notes} = this.state;
+        console.log(Editor)
         return (
             <div className = "Main">
                 <div>
@@ -67,15 +73,12 @@ export default class Main extends React.Component {
                             className = 'Input'
                             type='text'
                             onChange={this.handleChangeNote}
-
                         />
                     </form>
-                    <h3>Code:</h3>
-                    <Editor oChange={this.handleChangeCode}/>
-                    <button onClick={this.addNote}>Add</button>
+                    {/*<Editor onChange={this.handleChangeCode}/>*/}
+                    <button onClick={this.addNote}>Create</button>
                 </div>
-                <Notes class="notes" notes={notes}  remove={this.removeNote} />
-
+                <Notes class="notes" notes={notes}  remove={this.removeNote}/>
             </div>
         );
     }

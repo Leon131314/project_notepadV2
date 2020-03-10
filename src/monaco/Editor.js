@@ -69,6 +69,7 @@ class Editor extends Component {
         return editor;
     }
 
+
     didMount = editor => {
         const { didMount } = this.props;
 
@@ -91,9 +92,13 @@ class Editor extends Component {
         }
     };
 
+
+
+
+
     render() {
         const { className, style, width, height } = this.props;
-
+        console.log('REF' + this.editor)
         return (
             <div
                 ref={this.containerDidMount}
