@@ -1,4 +1,5 @@
 import React from "react";
+import Editor from "../monaco/Editor";
 
 
 export default function notes(props) {
@@ -7,15 +8,10 @@ export default function notes(props) {
             <ul className="List">{props.notes.map(note => {
                     if (note.id !== 0) {
                                 return (
-                                    <li key={note.id}>{note.task}
-                                            <button onClick={e => {
-                                                    props.remove(e, note)
-                                                    console.log(e.target)
-                                                    console.log(note.id)
-                                            }}>Remove
-                                            </button>
-                                    </li>
-
+                                    <div>
+                                        <li key={note.id}>{note.note}</li>
+                                            <button onClick={e => {props.remove(e, note)}}>Remove</button>
+                                    </div>
                                 )
                         }
                 }

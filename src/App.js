@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.scss';
 import Main from './components/Main';
-import Editor from "./monaco/editor";
+import MonacoEditor from "./MonacoIndex";
 
 function App() {
     return (
         <div className="Main">
             <Main/>
-            <Editor />
         </div>
     );
 }

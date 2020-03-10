@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'uuid';
 import Notes from './Notes';
+import Editor from '../monaco/Editor'
 
 export default class Main extends React.Component {
     constructor(props) {
@@ -9,28 +10,35 @@ export default class Main extends React.Component {
             notes: [
                 {
                     id: 0,
-                    task: ''
+                    note: '',
+                    code: ''
                 },
             ]
         };
 
-        this.handleChange = this.handleChange.bind(this);
+        this.handleChangeNote = this.handleChangeNote.bind(this);
+        this.handleChangeCode = this.handleChangeCode.bind(this);
         this.removeNote = this.removeNote.bind(this);
     }
-    handleChange(event) {
+    handleChangeNote(event) {
         this.setState({
             ...this.state,
-            task: event.target.value
+            note: event.target.value
         });
+    }
 
-
+    handleChangeCode(event) {
+        this.setState({
+            ...this.state,
+            code: event.target.value
+        });
     }
 
     addNote = () => {
         this.setState({
             notes: this.state.notes.concat([{
                 id: uuid.v4(),
-                task: this.state.task
+                note: this.state.note
             }])
         });
     };
@@ -58,10 +66,12 @@ export default class Main extends React.Component {
                         <input
                             className = 'Input'
                             type='text'
-                            onChange={this.handleChange}
+                            onChange={this.handleChangeNote}
 
                         />
                     </form>
+                    <h3>Code:</h3>
+                    <Editor oChange={this.handleChangeCode}/>
                     <button onClick={this.addNote}>Add</button>
                 </div>
                 <Notes class="notes" notes={notes}  remove={this.removeNote} />
