@@ -59,7 +59,7 @@ class Editor extends Component {
         const { language, theme } = this.props;
 
         const editor = window.monaco.editor.create(this.ref, {
-            value: "// @note: Ayoub test editor",
+            value: "//add code",
             language,
             theme
         });

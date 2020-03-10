@@ -7,18 +7,27 @@ const styles = ({
 });
 
 export default function notes(props) {
+        console.log(props.notes.type)
         return (
             <ul className="List">{props.notes.map(note => {
-                    if (note.id !== 0) {
-                                return (
-                                    <div style={{width:200}} key={note.id}>
-                                        <li >{note.note}
-                                            {note.code}</li>
-                                            <button onClick={e => {props.remove(e, note)}}>Remove</button>
-                                            <Editor style={styles}/>
-                                    </div>
-                                )
-                        }
+                    if (note.id !== 0 && note.type === 'code') {
+                            return (
+                                <div style={{width:200}} key={note.id}>
+                                        <li >{note.title}</li>
+                                        <li>{note.note}</li>
+                                        <button onClick={e => {props.remove(e, note)}}>Remove</button>
+                                        <Editor style={styles}/>
+                                </div>
+                            )
+                    } else if (note.id !== 0 && note.type === 'link') {
+                            return(
+                                <div className='Green'>
+                                        <li >{note.title}</li>
+                                        <li>{note.note}</li>
+                                        <button onClick={e => {props.remove(e, note)}}>Remove</button>
+                                </div>
+                            )
+                    }
                 }
             )}</ul>
         )

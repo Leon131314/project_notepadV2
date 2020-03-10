@@ -2,7 +2,6 @@ import React from 'react';
 import uuid from 'uuid';
 import Notes from './Notes';
 import Editor from '../monaco/Editor'
-import returnValue from '../monaco/Editor'
 
 
 
@@ -15,13 +14,15 @@ export default class Main extends React.Component {
                 {
                     id: 0,
                     note: '',
-                    code: ''
+                    title: '',
+                    type: 'type'
                 },
             ]
         };
 
         this.handleChangeNote = this.handleChangeNote.bind(this);
-        this.handleChangeCode = this.handleChangeCode.bind(this);
+        this.handleChangeTitle = this.handleChangeTitle.bind(this);
+        this.handleChangeType = this.handleChangeType.bind(this);
         this.removeNote = this.removeNote.bind(this);
     }
     handleChangeNote(event) {
@@ -31,13 +32,19 @@ export default class Main extends React.Component {
         });
     }
 
-    handleChangeCode(event) {
-        console.log(event.target)
-
+    handleChangeTitle(event) {
         this.setState({
             ...this.state,
-            code: event.target.value
+            title: event.target.value
         });
+    }
+
+    handleChangeType(event) {
+        this.setState({
+            ...this.state,
+            type: event.target.value
+        });
+        console.log("target" + event.target.value);
     }
 
     addNote = () => {
@@ -45,7 +52,8 @@ export default class Main extends React.Component {
             notes: this.state.notes.concat([{
                 id: uuid.v4(),
                 note: this.state.note,
-                code: this.state.code
+                title: this.state.title,
+                type: this.state.type
             }])
         });
     };
@@ -63,19 +71,20 @@ export default class Main extends React.Component {
 
     render() {
         const {notes} = this.state;
-        console.log(Editor)
         return (
             <div className = "Main">
                 <div>
                     <form>
-                        <p>Note:</p>
-                        <input
-                            className = 'Input'
-                            type='text'
-                            onChange={this.handleChangeNote}
-                        />
+                        <p>Title:</p>
+                        <input  className = 'Input' type='text' onChange={this.handleChangeTitle}/>
+                        <p>Description:</p>
+                        <input  className = 'Input' type='text' onChange={this.handleChangeNote}/>
+                        <select value={this.state.type} onChange={this.handleChangeType}>
+                            <option value='type'>Type</option>
+                            <option value='code'>Code</option>
+                            <option value='link'>Link</option>
+                        </select>
                     </form>
-                    {/*<Editor onChange={this.handleChangeCode}/>*/}
                     <button onClick={this.addNote}>Create</button>
                 </div>
                 <Notes class="notes" notes={notes}  remove={this.removeNote}/>
