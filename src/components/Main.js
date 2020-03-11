@@ -1,9 +1,6 @@
 import React from 'react';
 import uuid from 'uuid';
-import Notes from './Notes';
-import Editor from '../monaco/Editor'
-
-
+import Notes from './Test';
 
 
 export default class Main extends React.Component {
@@ -74,7 +71,7 @@ export default class Main extends React.Component {
         return (
             <div className = "Main">
                 <div>
-                    <form>
+                    <form className="Form">
                         <p>Title:</p>
                         <input  className = 'Input' type='text' onChange={this.handleChangeTitle}/>
                         <p>Description:</p>
