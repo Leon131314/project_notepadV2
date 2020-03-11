@@ -10,7 +10,7 @@ export default function notes(props) {
 
     return (
         <div className="Lists">
-        <ul className="ListLink">{props.notes.map(note => {
+        <ul className="List">{props.notes.map(note => {
                 if (note.id !== 0 && note.type === 'link') {
                     return (
                         <div style={{width: 200}} key={note.id}>
@@ -26,7 +26,7 @@ export default function notes(props) {
                 }
             }
         )}</ul>
-        <ul className="ListCode">{props.notes.map(note => {
+        <ul className="List">{props.notes.map(note => {
                 if (note.id !== 0 && note.type === 'code') {
                     return (
                         <div style={{width:200}} key={note.id}>

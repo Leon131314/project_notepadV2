@@ -7,7 +7,7 @@ import {sectionStyle} from './components/Styles'
 
 function App() {
     return (
-        <div className="Main" style={ sectionStyle }>
+        <div style={ sectionStyle }>
                 <Main/>
         </div>
     );

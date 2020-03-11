@@ -44,7 +44,8 @@ export default class Main extends React.Component {
         console.log("target" + event.target.value);
     }
 
-    addNote = () => {
+    addNote = (e) => {
+        e.preventDefault();
         this.setState({
             notes: this.state.notes.concat([{
                 id: uuid.v4(),
@@ -58,9 +59,6 @@ export default class Main extends React.Component {
 
     removeNote(event, id) {
         const array = [...this.state.notes];
-        // console.log(array);
-        // console.log(event.target);
-        // console.log(id);
         const index = array.indexOf(id);
         array.splice(index, 1);
             this.setState({notes: array});
@@ -70,7 +68,6 @@ export default class Main extends React.Component {
         const {notes} = this.state;
         return (
             <div className = "Main">
-                <div>
                     <form className="Form">
                         <p>Title:</p>
                         <input  className = 'Input' type='text' onChange={this.handleChangeTitle}/>
@@ -81,9 +78,8 @@ export default class Main extends React.Component {
                             <option value='code'>Code</option>
                             <option value='link'>Link</option>
                         </select>
+                        <button onClick={this.addNote}>Create</button>
                     </form>
-                    <button onClick={this.addNote}>Create</button>
-                </div>
                 <Notes class="notes" notes={notes}  remove={this.removeNote}/>
             </div>
         );
