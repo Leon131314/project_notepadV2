@@ -1,4 +1,4 @@
-import notes from "./notes.jpg";
+import notes from "../img/back1.jpg";
 
 export const sectionStyle = {
     width: "100%",

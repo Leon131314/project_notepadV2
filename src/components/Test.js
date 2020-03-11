@@ -1,6 +1,8 @@
 import React from "react";
 import Editor from "../monaco/Editor";
 
+
+
 const styles = ({
     height: 300,
     width: 300
@@ -21,7 +23,9 @@ export default function notes(props) {
                             }}>Remove
                             </button>
                             <div>link</div>
+
                         </div>
+
                     )
                 }
             }
