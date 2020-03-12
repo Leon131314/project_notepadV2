@@ -4,6 +4,8 @@ import Notes from './Notes';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Button from 'react-bootstrap/Button';
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
 
 
 
@@ -89,7 +91,9 @@ export default class Main extends React.Component {
                         <option value='code'>Code</option>
                         <option value='link'>Link</option>
                     </select>
-                    <button onClick={this.addNote}>Create</button>
+                    <ButtonToolbar className="CreateBtn">
+                    <Button variant="info" size="lg" onClick={this.addNote}>Create</Button>
+                    </ButtonToolbar>
                 </div>
                 <Notes class="notes" notes={notes}  remove={this.removeNote}/>
             </div>
