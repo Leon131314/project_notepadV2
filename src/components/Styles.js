@@ -6,8 +6,8 @@ import code from "../img/code-bcg.jpg"
 
 export const sectionStyle = {
     width: "100%",
-    height: "100vh",
-    backgroundImage: `url(${notes})`
+    height: "100%",
+    // backgroundImage: `url(${notes})`
     // WSTAWIANIE KOLEJNYCH ZDJEC TLA
         // `url(${back4})`
 };

@@ -48,7 +48,6 @@ export default class Main extends React.Component {
             ...this.state,
             type: event.target.value
         });
-        console.log("target" + event.target.value);
     }
 
     addNote = (e) => {
@@ -86,7 +85,7 @@ export default class Main extends React.Component {
                             </Col>
                         </Form.Row>
                     </Form>
-                    <select value={this.state.type} onChange={this.handleChangeType}>
+                    <select value={this.state.notes.type} onChange={this.handleChangeType}>
                         <option value='type'>Type</option>
                         <option value='code'>Code</option>
                         <option value='link'>Link</option>
