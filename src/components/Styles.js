@@ -37,8 +37,16 @@ export const codeStyle = {
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: 'auto',
-    marginBottom: 'auto',
+    marginBottom: '10px',
     borderRadius: '20px',
-    boxShadow: "5px 5px"
+    boxShadow: "5px 5px",
+    position: 'relative'
 
 };
+
+export const editorStyle = ({
+    height: 340,
+    width: '100%',
+    position: 'absolute',
+    bottom: 15,
+});

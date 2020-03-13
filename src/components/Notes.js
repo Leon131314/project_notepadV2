@@ -1,14 +1,11 @@
 import React from "react";
 import Editor from "../monaco/Editor";
-import {codeStyle, linkStyle} from "./Styles";
+import {codeStyle, linkStyle, editorStyle} from "./Styles";
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
 
-const styles = ({
-    height: 300,
-    width: 300
-});
+
 
 export default function notes(props) {
 
@@ -39,7 +36,7 @@ export default function notes(props) {
                             <li>{note.title}</li>
                             <li>{note.note}</li>
                             <button className="Button-remove" onClick={e => {props.remove(e, note)}}>Remove</button>
-                            <Editor style={styles}/>
+                            <Editor style={editorStyle}/>
                         </div>
                     )
                 }
