@@ -6,8 +6,7 @@ import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
-import {compare_arrows} from 'react-icons/md';
-
+import Welcome from "./WelcomeInfo";
 
 export default class Main extends React.Component {
     constructor(props) {
@@ -75,6 +74,7 @@ export default class Main extends React.Component {
         return (
             <div>
                 <div className = "Main">
+                        <Welcome />
                     <Form>
                         <Form.Row>
                             <Col>

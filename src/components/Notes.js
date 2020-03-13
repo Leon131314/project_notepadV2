@@ -23,7 +23,7 @@ export default function notes(props) {
                                 <InputGroup.Prepend>
                                     <Button variant="outline-secondary">Open</Button>
                                 </InputGroup.Prepend>
-                                <FormControl aria-describedby="basic-addon1" />
+                                <FormControl aria-describedby="basic-addon1"/>
                             </InputGroup>
                         </div>
                     )
