@@ -17,7 +17,9 @@ export default class Main extends React.Component {
                     id: 0,
                     note: '',
                     title: '',
-                    type: 'type'
+                    type: 'type',
+                    linkCounter: 0,
+                    codeCounter: 0
                 },
             ]
         };
@@ -26,6 +28,8 @@ export default class Main extends React.Component {
         this.handleChangeTitle = this.handleChangeTitle.bind(this);
         this.handleChangeType = this.handleChangeType.bind(this);
         this.removeNote = this.removeNote.bind(this);
+        this.removeNoteTest = this.removeNoteTest.bind(this);
+
 
     }
     handleChangeNote(event) {
@@ -56,16 +60,26 @@ export default class Main extends React.Component {
                 id: uuid.v4(),
                 note: this.state.note,
                 title: this.state.title,
-                type: this.state.type
+                type: this.state.type,
+                // linkCounter: this.state.type === 'link' ? `${this.state.linkCounter + 1}` : `${this.state.linkCounter + 0}`
             }])
         });
+        console.log(this.state.notes.linkCounter);
     };
 
     removeNote(event, id) {
         const array = [...this.state.notes];
         const index = array.indexOf(id);
         array.splice(index, 1);
-            this.setState({notes: array});
+        this.setState({notes: array});
+        this.setState({linkCounter: this.state.linkCounter - 1 })
+    };
+
+    removeNoteTest(event, id) {
+        const array = [...this.state.notes];
+        const index = array.indexOf(id);
+        array.splice(index, 1);
+        this.setState({notes: array});
     };
 
     render() {
@@ -94,7 +108,7 @@ export default class Main extends React.Component {
                     <Button variant="info" size="lg" onClick={this.addNote}>Create</Button>
                     </ButtonToolbar>
                 </div>
-                <Notes class="notes" notes={notes}  remove={this.removeNote}/>
+                <Notes class="notes" notes={notes}  remove={this.removeNote} removeTest={this.removeNoteTest}/>
             </div>
         );
     }
