@@ -4,7 +4,7 @@ import {codeStyle, linkStyle, editorStyle} from "./Styles";
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
-
+import { FaTrash } from 'react-icons/fa'
 
 
 export default function notes(props) {
@@ -15,9 +15,10 @@ export default function notes(props) {
                 if (note.id !== 0 && note.type === 'link') {
                     return (
                         <div style={linkStyle} key={note.id}>
-                            <li>{note.title}</li>
-                            <li>{note.note}</li>
-                            <button className="Button-remove" onClick={e => {props.remove(e, note)}}>Remove</button>
+                            <li><h1 className="Title">{note.title}</h1></li>
+                            <li><h3 className="Details-link">{note.note}</h3></li>
+                            <Button variant="dark" className="Button-remove" onClick={e => {props.remove(e, note)}}><FaTrash/>
+                            </Button>
                             <InputGroup className="mb-3">
                                 <InputGroup.Prepend>
                                     <Button variant="outline-secondary">Open</Button>
@@ -33,9 +34,9 @@ export default function notes(props) {
                 if (note.id !== 0 && note.type === 'code') {
                     return (
                         <div style={codeStyle} key={note.id}>
-                            <li>{note.title}</li>
-                            <li>{note.note}</li>
-                            <button className="Button-remove" onClick={e => {props.remove(e, note)}}>Remove</button>
+                            <li><h1 className="Title">{note.title}</h1></li>
+                            <li><h3 className="Details">{note.note}</h3></li>
+                            <Button variant="dark" size="sm" className="Button-remove" onClick={e => {props.remove(e, note)}}><FaTrash/></Button>
                             <Editor style={editorStyle}/>
                         </div>
                     )

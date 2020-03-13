@@ -5,8 +5,8 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
-import ButtonToolbar from 'react-bootstrap/ButtonToolbar'
-
+import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
+import {compare_arrows} from 'react-icons/md';
 
 
 export default class Main extends React.Component {
