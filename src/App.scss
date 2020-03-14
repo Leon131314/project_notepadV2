@@ -1,6 +1,5 @@
 
 $mainColor: #138496;
-
 $secondColor: #E2E2E0;
 
 b {
@@ -17,7 +16,7 @@ b {
   width: 320px;
   position: absolute;
   left: 45px;
-  top: 10px;
+  top: 15px;
 }
 
 #welcome-header{
@@ -126,7 +125,7 @@ body {
 .Lists {
   display: flex;
   justify-content: space-around;
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 .List-link {

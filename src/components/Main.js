@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Welcome from "./WelcomeInfo";
 import Select from 'react-select';
+import {menuStyle} from './Styles'
 
 
 
@@ -124,8 +125,8 @@ export default class Main extends React.Component {
 
         return (
             <div>
-                <div className = "Main">
-                    <Welcome />
+                <Welcome />
+                <div className = "Main" >
                     <Form>
                         <Form.Row>
                             <Col>
@@ -137,24 +138,16 @@ export default class Main extends React.Component {
                         </Form.Row>
                     </Form>
                     <Button onClick={this.linkCounter}>test</Button>
-                    {/*<select value={this.state.notes.type} onChange={this.handleChangeType}>*/}
-                    {/*    <option value='type'>Type</option>*/}
-                    {/*    <option value='code'>Code</option>*/}
-                    {/*    <option value='link'>Link</option>*/}
-                    {/*</select>*/}
-                    {/*<SelectType />*/}
-                    <div className="container">
                     <Select
                         className="mt-2 col-md-2 col-offset-2"
                         style = {style}
                         autoFocus={true}
                         options = {options} value={this.state.notes.type}
                         onChange={this.handleChangeType} />
-                    </div>
                     <ButtonToolbar className="CreateBtn">
                     <Button variant="info" size="lg" onClick={this.addNote}>Create</Button>
                     </ButtonToolbar>
-                </div>
+                    </div>
                 <Notes class="notes" notes={notes}  remove={this.removeNote} removeTest={this.removeNoteTest}/>
             </div>
         );

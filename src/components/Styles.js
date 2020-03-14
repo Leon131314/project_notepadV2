@@ -13,11 +13,13 @@ export const sectionStyle = {
 };
 
 export const menuStyle = {
-    width: "100%",
+    width: "500px",
     height: "100%",
     backgroundImage: `url(${menu})`,
     backgroundSize: 'cover',
-    display: 'block',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems:'center',
     marginLeft: 'auto',
     marginRight: 'auto',
     marginTop: 'auto',

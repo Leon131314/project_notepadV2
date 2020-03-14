@@ -26,16 +26,19 @@ export default class WelcomeInfo extends React.Component {
         return (
 
             <div className="Welcome">
-                <h4 className="Welcome-Note"><span id="welcome-header"> Welcome to <span id="logo2">Easy</span><span id="logo">Note</span> </span><br/>
+                <h4 className="Welcome-Note">
+                    <span id="welcome-header">
+                        Welcome to <span id="logo2">Easy</span><span id="logo">Note</span> </span><br/><br/>
                 - notepad app created for saving links and snippets
                 </h4>
                 <Button variant="outline-info" size="sm" className="ShowBtn" onClick={this.showInfo.bind(this)}>{showInstructions}
                 </Button>
-                <h5 className="Welcome-Info" style={showStyle}> In order to <b>Create</b> new <b>Note</b>:<br/>
+                <h5 className="Welcome-Info" style={showStyle}> In order to <b>Create</b> new <b>Note</b>:<br/><br/>
                     1) Enter <b>Title</b> and <b>Details/Tag</b>.<br/>
-                    2) Chose <b>Type</b> of note and click <b>Create</b> button.<br/>
-                    3) When new box appears, enter your <b>Code</b> / <b>Link</b>.<br/>
-                    * To <b>Remove</b> note - click <b><FaTrash/></b> icon in upper right corner of note.</h5>
+                    2) <b>Select</b> type of note<br/>
+                    3) Click <b>Create</b> button.<br/><br/>
+                    When new box appears, enter your <b>Code</b> / <b>Link</b>.<br/>
+                    To <b>Remove</b> note - click <b><FaTrash/></b> icon in upper right corner of note.</h5>
             </div>
         )
     }
