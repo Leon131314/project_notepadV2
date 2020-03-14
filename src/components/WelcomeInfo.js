@@ -27,14 +27,16 @@ export default class WelcomeInfo extends React.Component {
         return (
 
             <div className="Welcome">
-                <h4 className="Welcome-Note"> Welcome to EasyNote - notepad app created
-                    for saving major links and code snippets in one place
+                <h4 className="Welcome-Note"><span id="welcome-header"> Welcome to <span id="logo2">Easy</span><span id="logo">Note</span> </span><br/>
+                - notepad app created for saving links and snippets
                 </h4>
                 <Button variant="outline-info" size="sm" className="ShowBtn" onClick={this.showInfo.bind(this)}>{showInstructions}
                 </Button>
-                <h5 className="Welcome-Info" style={showStyle}> In order to create new Note, enter Title and Details/Tag,
-                    chose Type of note and click Create button. When new box appears, enter your code or link.
-                    In order to remove Note, click Trash icon in upper right corner of Note</h5>
+                <h5 className="Welcome-Info" style={showStyle}> In order to create new Note:<br/>
+                    1) Enter Title and Details/Tag,<br/>
+                    2) Chose Type of note and click Create button<br/>
+                    3) When new box appears, enter your code or link.<br/>
+                    To remove Note - click Trash icon in upper right corner of Note</h5>
             </div>
         )
     }

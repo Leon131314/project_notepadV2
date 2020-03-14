@@ -1,5 +1,43 @@
 
+.Welcome {
+  color: #ffffff;
+  width: 320px;
+  position: absolute;
+  left: 45px;
+  top: 10px;
+}
 
+#welcome-header{
+  font-size: 29px;
+}
+
+.Welcome-Note {
+  font-family: 'Merienda', cursive;
+  font-size: 18px;
+}
+
+#logo {
+  color: #138496;
+  font-family: 'Lobster', cursive;
+  font-size: 35px;
+}
+
+#logo2 {
+  color: #E2E2E0;
+  font-family: 'Lobster', cursive;
+  font-size: 35px;
+}
+
+.Welcome-Info {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+}
+
+.ShowBtn {
+  margin-left: 200px;
+  margin-bottom: 20px;
+  font-family: 'Cormorant Garamond', serif;
+}
 .Title {
   color: #ffffff;
   padding-top: 30px;
@@ -37,8 +75,9 @@ body {
   background-size: cover;
 }
 
-.mb-3 {
-  padding-top: 170px;
+.mb-3.input-group {
+  position: absolute;
+  top: 165px;
 }
 
 .phase1 {
@@ -68,6 +107,7 @@ body {
 .Lists {
   display: flex;
   justify-content: space-around;
+  margin-top: 100px;
 }
 
 .List-link {

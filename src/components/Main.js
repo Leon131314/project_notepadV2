@@ -17,7 +17,7 @@ export default class Main extends React.Component {
                     id: 0,
                     note: '',
                     title: '',
-                    type: 'type',
+                    type: '',
                     linkCounter: 0,
                     codeCounter: 0
                 },
@@ -29,7 +29,7 @@ export default class Main extends React.Component {
         this.handleChangeType = this.handleChangeType.bind(this);
         this.removeNote = this.removeNote.bind(this);
         this.removeNoteTest = this.removeNoteTest.bind(this);
-
+        this.linkCounter = this.linkCounter.bind(this);
 
     }
     handleChangeNote(event) {
@@ -53,6 +53,20 @@ export default class Main extends React.Component {
         });
     }
 
+    linkCounter() {
+        let linkCounter = 0;
+        const test = this.state.notes.map(note => {
+            if (note.type === 'link') {
+                linkCounter ++
+            }
+            return (
+                linkCounter
+            )
+        })
+        console.log(linkCounter)
+    }
+
+
     addNote = (e) => {
         e.preventDefault();
         this.setState({
@@ -64,7 +78,8 @@ export default class Main extends React.Component {
                 // linkCounter: this.state.type === 'link' ? `${this.state.linkCounter + 1}` : `${this.state.linkCounter + 0}`
             }])
         });
-        console.log(this.state.notes.linkCounter);
+        this.linkCounter();
+        // console.log(this.state.notes.linkCounter);
     };
 
     removeNote(event, id) {
@@ -73,6 +88,7 @@ export default class Main extends React.Component {
         array.splice(index, 1);
         this.setState({notes: array});
         this.setState({linkCounter: this.state.linkCounter - 1 })
+        this.linkCounter();
     };
 
     removeNoteTest(event, id) {
@@ -99,6 +115,7 @@ export default class Main extends React.Component {
                             </Col>
                         </Form.Row>
                     </Form>
+                    <Button onClick={this.linkCounter}>test</Button>
                     <select value={this.state.notes.type} onChange={this.handleChangeType}>
                         <option value='type'>Type</option>
                         <option value='code'>Code</option>
