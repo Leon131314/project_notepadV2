@@ -7,6 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Welcome from "./WelcomeInfo";
+import Select from 'react-select';
+
+
 
 export default class Main extends React.Component {
     constructor(props) {
@@ -46,12 +49,20 @@ export default class Main extends React.Component {
         });
     }
 
-    handleChangeType(event) {
+    // handleChangeType(event) {
+    //     this.setState({
+    //         ...this.state,
+    //         type: event.target.value
+    //     });
+    // }
+
+    handleChangeType = (selectedOptions) => {
         this.setState({
             ...this.state,
-            type: event.target.value
-        });
+            type: selectedOptions.value});
+        console.log(selectedOptions)
     }
+
 
     linkCounter() {
         let linkCounter = 0;
@@ -100,6 +111,16 @@ export default class Main extends React.Component {
 
     render() {
         const {notes} = this.state;
+        const options = [
+            { value: 'code', label: 'Code' },
+            { value: 'link', label: 'Link' },
+        ];
+
+        const style = {
+            display: 'flex',
+            alignItems: 'center',
+            flexDirection: 'column'
+        };
 
         return (
             <div>
@@ -116,11 +137,20 @@ export default class Main extends React.Component {
                         </Form.Row>
                     </Form>
                     <Button onClick={this.linkCounter}>test</Button>
-                    <select value={this.state.notes.type} onChange={this.handleChangeType}>
-                        <option value='type'>Type</option>
-                        <option value='code'>Code</option>
-                        <option value='link'>Link</option>
-                    </select>
+                    {/*<select value={this.state.notes.type} onChange={this.handleChangeType}>*/}
+                    {/*    <option value='type'>Type</option>*/}
+                    {/*    <option value='code'>Code</option>*/}
+                    {/*    <option value='link'>Link</option>*/}
+                    {/*</select>*/}
+                    {/*<SelectType />*/}
+                    <div className="container">
+                    <Select
+                        className="mt-2 col-md-2 col-offset-2"
+                        style = {style}
+                        autoFocus={true}
+                        options = {options} value={this.state.notes.type}
+                        onChange={this.handleChangeType} />
+                    </div>
                     <ButtonToolbar className="CreateBtn">
                     <Button variant="info" size="lg" onClick={this.addNote}>Create</Button>
                     </ButtonToolbar>

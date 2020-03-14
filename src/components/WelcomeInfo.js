@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/button'
 import {FaTrash} from 'react-icons/fa'
 
 
-
 export default class WelcomeInfo extends React.Component {
         constructor() {
             super();
@@ -38,7 +37,6 @@ export default class WelcomeInfo extends React.Component {
                     3) When new box appears, enter your <b>Code</b> / <b>Link</b>.<br/>
                     * To <b>Remove</b> note - click <b><FaTrash/></b> icon in upper right corner of note.</h5>
             </div>
-            <
         )
     }
 }

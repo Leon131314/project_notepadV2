@@ -4,11 +4,13 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.5",
+    "@material/react-select": "^0.15.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "bootstrap": "^4.4.1",
     "elemental": "^0.6.1",
+    "mdbootstrap": "^4.14.0",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-bootstrap": "^1.0.0-beta.17",
@@ -17,6 +19,7 @@
     "react-icons": "^3.9.0",
     "react-native": "^0.61.5",
     "react-scripts": "3.4.0",
+    "react-select": "^3.0.8",
     "typeface-roboto": "0.0.75"
   },
   "scripts": {

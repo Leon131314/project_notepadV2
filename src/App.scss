@@ -1,8 +1,15 @@
+
 $mainColor: #138496;
+
 $secondColor: #E2E2E0;
 
 b {
   color: $mainColor;
+}
+
+.container {
+  max-width: 200px;
+  align-self: center;
 }
 
 .Welcome {
