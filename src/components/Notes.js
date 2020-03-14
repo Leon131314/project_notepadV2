@@ -17,14 +17,14 @@ export default class notes extends React.Component {
         }
     }
 
-    openLink() {
+    openLink =()=> {
         const url = this.state.link;
         window.open(url, '_blank');
     }
 
-    handleChangeLink(event) {
+    handleChangeLink =(event)=> {
         this.setState({
-            state: event.target.value
+            link: event.target.value
         });
     }
 
