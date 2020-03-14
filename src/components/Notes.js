@@ -35,7 +35,7 @@ export default function notes(props) {
                     return (
                         <div style={codeStyle} key={note.id}>
                             <li><h1 className="Title">{note.title}</h1></li>
-                            <li><h3 className="Details">{note.note}</h3></li>
+                            <li><h3 className="Details-Code">{note.note}</h3></li>
                             <Button variant="dark" size="sm" className="Button-remove" onClick={e => {props.removeTest(e, note)}}><FaTrash/></Button>
                             <Editor style={editorStyle}/>
                         </div>

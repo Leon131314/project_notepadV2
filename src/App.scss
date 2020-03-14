@@ -1,3 +1,9 @@
+$mainColor: #138496;
+$secondColor: #E2E2E0;
+
+b {
+  color: $mainColor;
+}
 
 .Welcome {
   color: #ffffff;
@@ -17,13 +23,13 @@
 }
 
 #logo {
-  color: #138496;
+  color: $mainColor;
   font-family: 'Lobster', cursive;
   font-size: 35px;
 }
 
 #logo2 {
-  color: #E2E2E0;
+  color: $secondColor;
   font-family: 'Lobster', cursive;
   font-size: 35px;
 }
@@ -31,6 +37,7 @@
 .Welcome-Info {
   font-family: 'Roboto Mono', monospace;
   font-size: 16px;
+  width: 500px;
 }
 
 .ShowBtn {
@@ -39,21 +46,26 @@
   font-family: 'Cormorant Garamond', serif;
 }
 .Title {
-  color: #ffffff;
+  color: $mainColor;
   padding-top: 30px;
   padding-left: 50px;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.Details {
-  color: #ffffff;
+@mixin detailsStyle {
+  color: $secondColor;
   position: absolute;
+  font-family: 'Karla', sans-serif;
+}
+
+.Details-Code {
+  @include detailsStyle;
   right: 70px;
   top: 45px;
 }
 
 .Details-link {
-  color: #ffffff;
-  position: absolute;
+  @include detailsStyle;
   left: 20px;
   bottom: 20px;
 }
