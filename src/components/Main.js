@@ -125,7 +125,7 @@ export default class Main extends React.Component {
         return (
             <div>
                 <div className = "Main">
-                        <Welcome />
+                    <Welcome />
                     <Form>
                         <Form.Row>
                             <Col>
