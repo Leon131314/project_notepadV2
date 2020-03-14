@@ -2,9 +2,21 @@
 $mainColor: #138496;
 $secondColor: #E2E2E0;
 
+@mixin detailsStyle {
+  color: $secondColor;
+  position: absolute;
+  font-family: 'Karla', sans-serif;
+}
+
 b {
   color: $mainColor;
 }
+
+body {
+  background: url('../src/img/back1.jpg');
+  background-size: cover;
+}
+
 
 .container {
   max-width: 200px;
@@ -58,11 +70,7 @@ b {
   font-family: 'Ubuntu', sans-serif;
 }
 
-@mixin detailsStyle {
-  color: $secondColor;
-  position: absolute;
-  font-family: 'Karla', sans-serif;
-}
+
 
 .Details-Code {
   @include detailsStyle;
@@ -76,17 +84,6 @@ b {
   bottom: 20px;
 }
 
-
-
-//
-//.CreateBtn {
-//  padding-top: 0px;
-//}
-
-body {
-  background: url('../src/img/back1.jpg');
-  background-size: cover;
-}
 
 .back2 {
   background: url('../src/img/back4.jpg');
@@ -108,8 +105,7 @@ body {
   flex-direction: column;
   align-items: center;
   height: 250px;
-  //padding-top: 0px;
-  margin-right: 65px;
+  margin-right: 85px;
 }
 
 .Button-remove {
@@ -118,8 +114,13 @@ body {
   right:0;
 }
 
-.Form {
-  background-image: url("/src/img/notes.jpg");
+.CreateBtn {
+  padding-bottom: 30px;
+}
+
+Form {
+padding-top: 30px;
+  padding-bottom: 20px;
 }
 
 .Lists {
@@ -147,37 +148,8 @@ body {
   height: 40px;
 }
 
-.Green {
-  background-color: green;
-}
 
 
-
-
-//.App-logo {
-//  height: 40vmin;
-//  pointer-events: none;
-//}
-
-//.App-header {
-//  background-color: #282c34;
-//  min-height: 100vh;
-//  display: flex;
-//  flex-direction: column;
-//  align-items: center;
-//  justify-content: center;
-//  font-size: calc(10px + 2vmin);
-//  color: white;
-//}
-//
-//.App-link {
-//  color: #61dafb;
-//}
-
-//.List {
-//  list-style: none;
-//  width: 300px;
-//}
 
 
 

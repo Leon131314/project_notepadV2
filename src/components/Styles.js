@@ -1,6 +1,6 @@
 import link from "../img/link-bcg.jpg"
 import code from "../img/code-bcg.jpg"
-import menu from "../img/test2.jpg"
+import menu from "../img/test3.jpg"
 
 
 
@@ -10,24 +10,28 @@ export const sectionStyle = {
     // backgroundImage: `url(${notes})`
     // WSTAWIANIE KOLEJNYCH ZDJEC TLA
         // `url(${back4})`
+    // WSTAWIC Z TABLICY MAPEM??
 };
 
 export const menuStyle = {
     width: "500px",
-    height: "100%",
+    height: "250px",
     backgroundImage: `url(${menu})`,
     backgroundSize: 'cover',
     display: 'flex',
     flexDirection: 'column',
     alignItems:'center',
     marginLeft: 'auto',
-    marginRight: 'auto',
-    marginTop: 'auto',
+    marginRight: '540px',
+    marginTop: '10px',
     marginBottom: '10px',
     borderRadius: '20px',
     boxShadow: "5px 5px",
-    position: 'relative'
-
+    position: 'relative',
+    borderColor: '#138496',
+    borderStyle: 'solid',
+    borderWidth: '2px',
+    opacity: '0,5'
 };
 
 

@@ -66,7 +66,7 @@ export default class Main extends React.Component {
 
 
     linkCounter() {
-        let linkCounter = 0;
+        let linkCounter = 1;
         const test = this.state.notes.map(note => {
             if (note.type === 'link') {
                 linkCounter ++
@@ -91,7 +91,7 @@ export default class Main extends React.Component {
             }])
         });
         this.linkCounter();
-        // console.log(this.state.notes.linkCounter);
+        console.log(this.state.notes.linkCounter);
     };
 
     removeNote(event, id) {
@@ -126,7 +126,7 @@ export default class Main extends React.Component {
         return (
             <div>
                 <Welcome />
-                <div className = "Main" >
+                <div className = "Main" style={menuStyle} >
                     <Form>
                         <Form.Row>
                             <Col>
@@ -137,9 +137,8 @@ export default class Main extends React.Component {
                             </Col>
                         </Form.Row>
                     </Form>
-                    <Button onClick={this.linkCounter}>test</Button>
                     <Select
-                        className="mt-2 col-md-2 col-offset-2"
+                        className="mt-1 col-md-4 col-offset-1"
                         style = {style}
                         autoFocus={true}
                         options = {options} value={this.state.notes.type}

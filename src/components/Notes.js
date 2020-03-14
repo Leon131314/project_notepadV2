@@ -7,8 +7,6 @@ import FormControl from 'react-bootstrap/FormControl';
 import { FaTrash } from 'react-icons/fa'
 
 
-// export default function notes(props) {
-
 export default class notes extends React.Component {
     constructor(props) {
         super(props);
@@ -20,13 +18,13 @@ export default class notes extends React.Component {
     openLink =()=> {
         const url = this.state.link;
         window.open(url, '_blank');
-    }
+    };
 
     handleChangeLink =(event)=> {
         this.setState({
             link: event.target.value
         });
-    }
+    };
 
     render() {
 
