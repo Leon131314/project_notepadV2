@@ -15,18 +15,31 @@ export default class notes extends React.Component {
         }
     }
 
-    openLink =()=> {
+    openLink =(link)=> {
         const url = this.state.link;
         window.open(url, '_blank');
     };
 
+
     handleChangeLink =(event)=> {
         this.setState({
-            link: event.target.value
-        });
+                link: event.target.value
+            })
     };
 
+    handleSave =(e)=>{
+        e.preventDefault();
+        this.setState({
+            link: this.state.link.concat({
+                link: this.state.link
+            })
+        });
+        console.log(this.state);
+    };
+
+
     render() {
+        const date = new Date().toLocaleString();
 
         return (
             <div className="Lists">
@@ -34,7 +47,7 @@ export default class notes extends React.Component {
                         if (note.id !== 0 && note.type === 'link') {
                             return (
                                 <div style={linkStyle} key={note.id}>
-                                    <li><h1 className="Title">{note.title}</h1></li>
+                                    <li><h1 className="Title">{note.title} {date}</h1></li>
                                     <li><h3 className="Details-link">{note.note}</h3></li>
                                     <Button variant="dark" className="Button-remove" onClick={e => {
                                         this.props.remove(e, note)
@@ -46,6 +59,7 @@ export default class notes extends React.Component {
                                         </InputGroup.Prepend>
                                         <FormControl aria-describedby="basic-addon1" onChange={this.handleChangeLink}/>
                                     </InputGroup>
+                                    <button onClick={this.handleSave}> save</button>
                                 </div>
                             )
                         }

@@ -9,7 +9,7 @@ import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import Welcome from "./WelcomeInfo";
 import Select from 'react-select';
 import {menuStyle} from './Styles'
-
+import Clock from './clock';
 
 
 export default class Main extends React.Component {
@@ -123,6 +123,14 @@ export default class Main extends React.Component {
             flexDirection: 'column'
         };
 
+        // const clockStyle = {
+        //     height: '200px',
+        //     color: '#fffff',
+        //     width: '200px'
+        // }
+
+        const date = new Date().toLocaleString();
+
         return (
             <div>
                 <Welcome />
@@ -146,7 +154,8 @@ export default class Main extends React.Component {
                     <ButtonToolbar className="CreateBtn">
                     <Button variant="info" size="lg" onClick={this.addNote}>Create</Button>
                     </ButtonToolbar>
-                    </div>
+                </div>
+                <Clock/>
                 <Notes class="notes" notes={notes}  remove={this.removeNote} removeTest={this.removeNoteTest}/>
             </div>
         );
