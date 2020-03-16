@@ -23,7 +23,8 @@ export default class Main extends React.Component {
                     title: '',
                     type: '',
                     linkCounter: 0,
-                    codeCounter: 0
+                    codeCounter: 0,
+                    date: ''
                 },
             ]
         };
@@ -61,25 +62,34 @@ export default class Main extends React.Component {
         this.setState({
             ...this.state,
             type: selectedOptions.value});
-        console.log(selectedOptions)
-    }
+    };
 
 
     linkCounter() {
         let linkCounter = 1;
-        const test = this.state.notes.map(note => {
+        this.state.notes.map(note => {
             if (note.type === 'link') {
                 linkCounter ++
             }
             return (
                 linkCounter
             )
-        })
-        console.log(linkCounter)
-    }
+        })};
+
+    codeCounter =()=> {
+        let codeCounter = 0;
+        this.state.notes.map(note => {
+            if (note.type === 'link') {
+                codeCounter ++
+            }
+            return (
+                codeCounter
+            )
+        })};
 
 
     addNote = (e) => {
+        const date = new Date().toLocaleString();
         e.preventDefault();
         this.setState({
             notes: this.state.notes.concat([{
@@ -87,11 +97,14 @@ export default class Main extends React.Component {
                 note: this.state.note,
                 title: this.state.title,
                 type: this.state.type,
-                // linkCounter: this.state.type === 'link' ? `${this.state.linkCounter + 1}` : `${this.state.linkCounter + 0}`
+                date: date
             }])
         });
+
+        console.log(this.state);
+
         this.linkCounter();
-        console.log(this.state.notes.linkCounter);
+        this.codeCounter();
     };
 
     removeNote(event, id) {
@@ -123,17 +136,51 @@ export default class Main extends React.Component {
             flexDirection: 'column'
         };
 
+        let linkCounter = 0;
+        this.state.notes.map(note => {
+            if (note.type === 'link') {
+                linkCounter ++
+            }
+            return (
+                linkCounter
+            )
+        });
+
+        let codeCounter = 0;
+        this.state.notes.map(note => {
+            if (note.type === 'code') {
+                codeCounter ++
+            }
+            return (
+                codeCounter
+            )
+        });
+
+        // let codeCounter = 0;
+        // this.state.notes.map(note => {
+        //     if (note.type === 'link') {
+        //         linkCounter ++
+        //     }
+        //     return (
+        //         codeCounter
+        //     )
+        // });
+
         // const clockStyle = {
         //     height: '200px',
         //     color: '#fffff',
         //     width: '200px'
         // }
 
-        const date = new Date().toLocaleString();
+        // const date = new Date().toLocaleString();
 
         return (
             <div>
                 <Welcome />
+                <span className="Counter">
+                    <p>links: <b>{linkCounter}</b> </p>
+                    <p>snippets: <b>{codeCounter}</b></p>
+                </span>
                 <div className = "Main" style={menuStyle} >
                     <Form>
                         <Form.Row>

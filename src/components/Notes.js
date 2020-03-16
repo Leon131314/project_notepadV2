@@ -15,7 +15,7 @@ export default class notes extends React.Component {
         }
     }
 
-    openLink =(link)=> {
+    openLink =()=> {
         const url = this.state.link;
         window.open(url, '_blank');
     };
@@ -34,12 +34,16 @@ export default class notes extends React.Component {
                 link: this.state.link
             })
         });
-        console.log(this.state);
+    };
+
+    createDate =() =>{
+        const date = new Date().toLocaleString();
+        return date;
     };
 
 
     render() {
-        const date = new Date().toLocaleString();
+        // const date = new Date().toLocaleString();
 
         return (
             <div className="Lists">
@@ -47,8 +51,9 @@ export default class notes extends React.Component {
                         if (note.id !== 0 && note.type === 'link') {
                             return (
                                 <div style={linkStyle} key={note.id}>
-                                    <li><h1 className="Title">{note.title} {date}</h1></li>
+                                    <li><h1 className="Title">{note.title}</h1></li>
                                     <li><h3 className="Details-link">{note.note}</h3></li>
+                                    <li><h4 className="CreationDate">created: {note.date}</h4> </li>
                                     <Button variant="dark" className="Button-remove" onClick={e => {
                                         this.props.remove(e, note)
                                     }}><FaTrash/>
@@ -71,6 +76,7 @@ export default class notes extends React.Component {
                                 <div style={codeStyle} key={note.id}>
                                     <li><h1 className="Title">{note.title}</h1></li>
                                     <li><h3 className="Details-Code">{note.note}</h3></li>
+                                    <li><h4 className="CreationDate">created: {note.date}</h4> </li>
                                     <Button variant="dark" size="sm" className="Button-remove" onClick={e => {
                                         this.props.removeTest(e, note)
                                     }}><FaTrash/></Button>
