@@ -10,36 +10,36 @@ import { FaTrash } from 'react-icons/fa'
 export default class notes extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            link: ''
-        }
+        // this.state = {
+        //     link: ''
+        // }
     }
 
-    openLink =()=> {
-        const url = this.state.link;
-        window.open(url, '_blank');
-    };
+    // openLink =()=> {
+    //     const url = this.state.link;
+    //     window.open(url, '_blank');
+    // };
+    //
+    //
+    // handleChangeLink =(event)=> {
+    //     this.setState({
+    //             link: event.target.value
+    //         })
+    // };
+    //
+    // handleSave =(e)=>{
+    //     e.preventDefault();
+    //     this.setState({
+    //         link: this.state.link.concat({
+    //             link: this.state.link
+    //         })
+    //     });
+    // };
 
-
-    handleChangeLink =(event)=> {
-        this.setState({
-                link: event.target.value
-            })
-    };
-
-    handleSave =(e)=>{
-        e.preventDefault();
-        this.setState({
-            link: this.state.link.concat({
-                link: this.state.link
-            })
-        });
-    };
-
-    createDate =() =>{
-        const date = new Date().toLocaleString();
-        return date;
-    };
+    // createDate =() =>{
+    //     const date = new Date().toLocaleString();
+    //     return date;
+    // };
 
 
     render() {
@@ -60,11 +60,13 @@ export default class notes extends React.Component {
                                     </Button>
                                     <InputGroup className="mb-3">
                                         <InputGroup.Prepend>
-                                            <Button variant="outline-secondary" onClick={this.openLink}>Open</Button>
+                                            <Button variant="outline-secondary" onClick={e => {
+                                                this.props.open(e, note.url)
+                                            }}>Open</Button>
                                         </InputGroup.Prepend>
-                                        <FormControl aria-describedby="basic-addon1" onChange={this.handleChangeLink}/>
+                                        <FormControl aria-describedby="basic-addon1" onChange={this.props.handleChangeLink}/>
                                     </InputGroup>
-                                    <button onClick={this.handleSave}> save</button>
+                                    <button onClick={this.props.handleSave}> save</button>
                                 </div>
                             )
                         }

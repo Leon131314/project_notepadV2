@@ -20,6 +20,7 @@ export default class Main extends React.Component {
                 {
                     id: 0,
                     note: '',
+                    url: '',
                     title: '',
                     type: '',
                     linkCounter: 0,
@@ -123,6 +124,31 @@ export default class Main extends React.Component {
         this.setState({notes: array});
     };
 
+
+    handleChangeLink =(event)=> {
+        this.setState({
+            url: event.target.value
+        })
+    };
+
+
+    handleSave =(e)=>{
+        e.preventDefault();
+        this.setState({
+            notes: this.state.notes.concat({
+                url: this.state.url
+            })
+        });
+    };
+
+    openLink =(event, url)=> {
+        // const link = url;
+        window.open(url, '_blank');
+    };
+
+
+
+
     render() {
         const {notes} = this.state;
         const options = [
@@ -203,7 +229,8 @@ export default class Main extends React.Component {
                     </ButtonToolbar>
                 </div>
                 <Clock/>
-                <Notes class="notes" notes={notes}  remove={this.removeNote} removeTest={this.removeNoteTest}/>
+                <Notes class="notes" notes={notes}  remove={this.removeNote} removeTest={this.removeNoteTest}
+                open={this.openLink} handleChangeLink={this.handleChangeLink} handleSave={this.handleSave}/>
             </div>
         );
     }
