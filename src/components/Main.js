@@ -36,6 +36,10 @@ export default class Main extends React.Component {
         this.removeNote = this.removeNote.bind(this);
         this.removeNoteTest = this.removeNoteTest.bind(this);
         this.linkCounter = this.linkCounter.bind(this);
+        this.handleChangeLink = this.handleChangeLink.bind(this);
+        this.handleSave = this.handleSave.bind(this);
+        this.openLink = this.openLink.bind(this);
+
 
     }
     handleChangeNote(event) {
@@ -98,7 +102,8 @@ export default class Main extends React.Component {
                 note: this.state.note,
                 title: this.state.title,
                 type: this.state.type,
-                date: date
+                date: date,
+                url: this.state.url
             }])
         });
 
@@ -125,25 +130,39 @@ export default class Main extends React.Component {
     };
 
 
-    handleChangeLink =(event)=> {
-        this.setState({
-            url: event.target.value
-        })
+    handleChangeLink =(event, link)=> {
+        // console.log(event);
+        // this.setState({
+        //     ...this.state,
+        //     url: event.target.value
+        // })
+        const array = [...this.state.notes];
+        const index = array.indexOf(link);
+        console.log('handleChange: ' + index);
+        array[index].url = event.target.value;
+        console.log(array);
+
     };
 
 
     handleSave =(e)=>{
-        e.preventDefault();
-        this.setState({
-            notes: this.state.notes.concat({
-                url: this.state.url
-            })
-        });
+        // e.preventDefault();
+        // this.setState({
+        //     notes: this.state.notes.concat({
+        //         url: this.state.url
+        //     })
+        // });
     };
 
-    openLink =(event, url)=> {
+    openLink =(e, link)=> {
         // const link = url;
-        window.open(url, '_blank');
+        console.log(link);
+        console.log(e);
+        const array = [...this.state.notes];
+        const index = array.indexOf(link);
+        console.log(index);
+        console.log(array[index].url);
+        window.open(array[index].url, '_blank');
     };
 
 

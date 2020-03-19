@@ -61,10 +61,12 @@ export default class notes extends React.Component {
                                     <InputGroup className="mb-3">
                                         <InputGroup.Prepend>
                                             <Button variant="outline-secondary" onClick={e => {
-                                                this.props.open(e, note.url)
+                                                this.props.open(e, note)
                                             }}>Open</Button>
                                         </InputGroup.Prepend>
-                                        <FormControl aria-describedby="basic-addon1" onChange={this.props.handleChangeLink}/>
+                                        <FormControl aria-describedby="basic-addon1" onChange={e => {
+                                            this.props.handleChangeLink(e, note)
+                                        }}/>
                                     </InputGroup>
                                     <button onClick={this.props.handleSave}> save</button>
                                 </div>
