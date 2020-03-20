@@ -107,8 +107,8 @@ export const codeStyle = {
 };
 
 export const editorStyle = ({
-    height: 350,
+    height: '350px',
     width: '100%',
     position: 'absolute',
-    bottom: 30,
+    bottom: 30
 });

@@ -21,7 +21,7 @@ body {
 //  position: -webkit-sticky; /* Safari */
 //  position: sticky;
 //  top: 0;
-//  z-index: 999;
+//  z-index: 999999;
 //  background-color: black;
 //}
 
@@ -124,16 +124,32 @@ body {
 }
 .Title {
   color: $mainColor;
-  padding-top: 40px;
-  padding-left: 40px;
+  padding-top: 10px;
+  padding-left: 10px;
+  width: 200px;
+  height: 200px;
+  word-wrap: break-word;
   font-family: 'Ubuntu', sans-serif;
+
+  //white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  //max-width: 200px;
+  max-height: 150px;
 }
 
 .TitleCode {
   color: $mainColor;
-  padding-top: 20px;
-  padding-left: 40px;
+  padding-top: 10px;
+  padding-left: 20px;
   font-family: 'Ubuntu', sans-serif;
+  word-wrap: break-word;
+
+  //white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
+  max-height: 50px;
 }
 
 .CreationDate {
@@ -151,13 +167,35 @@ body {
 .Details-Code {
   @include detailsStyle;
   left: 20px;
-  top: 90px;
+  top: 80px;
+  width: 200px;
+  word-wrap: break-word;
+  white-space: initial;
+
+
+  //white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  //max-width: 200px;
+  max-height: 150px;
 }
 
 .Details-link {
   @include detailsStyle;
-  left: 40px;
-  bottom: 60px;
+  left: 10px;
+  bottom: 0px;
+  width: 200px;
+  height: 130px;
+  word-wrap: break-word;
+  white-space: initial;
+
+
+  //white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  //max-width: 200px;
+  max-height: 130px;
+
 }
 
 
@@ -186,8 +224,8 @@ body {
 
 .Button-remove {
   position:absolute;
-  top:0;
-  right:0;
+  top:5px;
+  right:7px;
 }
 
 .CreateBtn {

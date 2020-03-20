@@ -10,7 +10,7 @@ import Welcome from "./WelcomeInfo";
 import Select from 'react-select';
 import {menuStyle} from './Styles'
 import Clock from './clock';
-import Tags from './TAgs';
+import Tags from './Tags';
 
 
 export default class Main extends React.Component {
@@ -57,13 +57,6 @@ export default class Main extends React.Component {
         });
     }
 
-    // handleChangeType(event) {
-    //     this.setState({
-    //         ...this.state,
-    //         type: event.target.value
-    //     });
-    // }
-
     handleChangeType = (selectedOptions) => {
         this.setState({
             ...this.state,
@@ -108,8 +101,6 @@ export default class Main extends React.Component {
             }])
         });
 
-        console.log(this.state);
-
         this.linkCounter();
         this.codeCounter();
     };
@@ -132,17 +123,9 @@ export default class Main extends React.Component {
 
 
     handleChangeLink =(event, link)=> {
-        // console.log(event);
-        // this.setState({
-        //     ...this.state,
-        //     url: event.target.value
-        // })
         const array = [...this.state.notes];
         const index = array.indexOf(link);
-        console.log('handleChange: ' + index);
         array[index].url = event.target.value;
-        console.log(array);
-
     };
 
 
@@ -156,16 +139,10 @@ export default class Main extends React.Component {
     };
 
     openLink =(e, link)=> {
-        // const link = url;
-        console.log(link);
-        console.log(e);
         const array = [...this.state.notes];
         const index = array.indexOf(link);
-        console.log(index);
-        console.log(array[index].url);
         window.open(array[index].url, '_blank');
     };
-
 
 
 
@@ -202,23 +179,6 @@ export default class Main extends React.Component {
             )
         });
 
-        // let codeCounter = 0;
-        // this.state.notes.map(note => {
-        //     if (note.type === 'link') {
-        //         linkCounter ++
-        //     }
-        //     return (
-        //         codeCounter
-        //     )
-        // });
-
-        // const clockStyle = {
-        //     height: '200px',
-        //     color: '#fffff',
-        //     width: '200px'
-        // }
-
-        // const date = new Date().toLocaleString();
 
         return (
             <div>
@@ -229,7 +189,7 @@ export default class Main extends React.Component {
                         <Form>
                             <Form.Row>
                                 <Col>
-                                    <Form.Control placeholder="Title" onChange={this.handleChangeTitle} />
+                                    <Form.Control placeholder="Title" max="30" onChange={this.handleChangeTitle} />
                                 </Col>
                                 <Col>
                                     <Form.Control placeholder="Description" onChange={this.handleChangeNote}/>
@@ -264,7 +224,5 @@ export default class Main extends React.Component {
             </div>
         );
     }
-
-
 
 }
