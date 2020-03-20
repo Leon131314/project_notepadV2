@@ -10,7 +10,7 @@ import Welcome from "./WelcomeInfo";
 import Select from 'react-select';
 import {menuStyle} from './Styles'
 import Clock from './clock';
-import Example from './TAgs';
+import Tags from './TAgs';
 
 
 export default class Main extends React.Component {
@@ -223,10 +223,7 @@ export default class Main extends React.Component {
         return (
             <div>
                 <Welcome />
-                <span className="Counter">
-                    <p>links: <b>{linkCounter}</b> </p>
-                    <p>snippets: <b>{codeCounter}</b></p>
-                </span>
+
                 <div className = "Main" style={menuStyle} >
                     <Form>
                         <Form.Row>
@@ -247,9 +244,17 @@ export default class Main extends React.Component {
                     <ButtonToolbar className="CreateBtn">
                     <Button variant="info" size="lg" onClick={this.addNote}>Create</Button>
                     </ButtonToolbar>
-                    <Example/>
                 </div>
-                <Clock/>
+
+                <div className="RightPanel">
+                    <Clock/>
+                    <span className="Counter">
+                        <p>links: <b>{linkCounter}</b> </p>
+                        <p>snippets: <b>{codeCounter}</b></p>
+                    </span>
+                    <Tags/>
+                </div>
+
                 <Notes class="notes" notes={notes}  remove={this.removeNote} removeTest={this.removeNoteTest}
                 open={this.openLink} handleChangeLink={this.handleChangeLink} handleSave={this.handleSave}/>
             </div>

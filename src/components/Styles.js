@@ -4,6 +4,16 @@ import menu from "../img/test3.jpg"
 
 
 
+export const linkTags = {
+    width: '50px',
+};
+
+export const codeTags = {
+    width: '150px',
+};
+
+
+
 export const sectionStyle = {
     width: "100%",
     height: "100%",

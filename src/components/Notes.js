@@ -1,50 +1,18 @@
 import React from "react";
 import Editor from "../monaco/Editor";
-import {codeStyle, linkStyle, editorStyle} from "./Styles";
+import {codeStyle, linkStyle, editorStyle, linkTags, codeTags} from "./Styles";
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
 import FormControl from 'react-bootstrap/FormControl';
 import { FaTrash } from 'react-icons/fa'
-
+import Tags from './TAgs';
 
 export default class notes extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     link: ''
-        // }
     }
 
-    // openLink =()=> {
-    //     const url = this.state.link;
-    //     window.open(url, '_blank');
-    // };
-    //
-    //
-    // handleChangeLink =(event)=> {
-    //     this.setState({
-    //             link: event.target.value
-    //         })
-    // };
-    //
-    // handleSave =(e)=>{
-    //     e.preventDefault();
-    //     this.setState({
-    //         link: this.state.link.concat({
-    //             link: this.state.link
-    //         })
-    //     });
-    // };
-
-    // createDate =() =>{
-    //     const date = new Date().toLocaleString();
-    //     return date;
-    // };
-
-
     render() {
-        // const date = new Date().toLocaleString();
-
         return (
             <div className="Lists">
                 <ul className="List-link">{this.props.notes.map(note => {
@@ -68,7 +36,8 @@ export default class notes extends React.Component {
                                             this.props.handleChangeLink(e, note)
                                         }}/>
                                     </InputGroup>
-                                    <button onClick={this.props.handleSave}> save</button>
+                                    {/*<button onClick={this.props.handleSave}> save</button>*/}
+                                    <Tags style={linkTags}/>
                                 </div>
                             )
                         }
@@ -85,6 +54,7 @@ export default class notes extends React.Component {
                                         this.props.removeTest(e, note)
                                     }}><FaTrash/></Button>
                                     <Editor style={editorStyle}/>
+                                    <Tags style={codeTags}/>
                                 </div>
                             )
                         }
@@ -93,6 +63,4 @@ export default class notes extends React.Component {
             </div>
         )
     }
-
-
 }
