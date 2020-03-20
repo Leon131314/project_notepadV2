@@ -10,6 +10,7 @@ import Welcome from "./WelcomeInfo";
 import Select from 'react-select';
 import {menuStyle} from './Styles'
 import Clock from './clock';
+import Example from './TAgs';
 
 
 export default class Main extends React.Component {
@@ -246,6 +247,7 @@ export default class Main extends React.Component {
                     <ButtonToolbar className="CreateBtn">
                     <Button variant="info" size="lg" onClick={this.addNote}>Create</Button>
                     </ButtonToolbar>
+                    <Example/>
                 </div>
                 <Clock/>
                 <Notes class="notes" notes={notes}  remove={this.removeNote} removeTest={this.removeNoteTest}
