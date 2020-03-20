@@ -231,7 +231,7 @@ export default class Main extends React.Component {
                                 <Form.Control placeholder="Title" onChange={this.handleChangeTitle} />
                             </Col>
                             <Col>
-                                <Form.Control placeholder="Details/Tags" onChange={this.handleChangeNote}/>
+                                <Form.Control placeholder="Description" onChange={this.handleChangeNote}/>
                             </Col>
                         </Form.Row>
                     </Form>
@@ -252,9 +252,10 @@ export default class Main extends React.Component {
                         <p>links: <b>{linkCounter}</b> </p>
                         <p>snippets: <b>{codeCounter}</b></p>
                     </span>
-                    <Tags/>
                 </div>
-
+                <div className="Tags">
+                <Tags/>
+                </div>
                 <Notes class="notes" notes={notes}  remove={this.removeNote} removeTest={this.removeNoteTest}
                 open={this.openLink} handleChangeLink={this.handleChangeLink} handleSave={this.handleSave}/>
             </div>

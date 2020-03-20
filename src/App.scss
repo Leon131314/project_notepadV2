@@ -19,24 +19,45 @@ body {
 
 .App-clock {
   color: #ffffff;
-  position: absolute;
-  top: 15px;
-  right: 45px;
+  height: 100px;
+  order: 1;
+  //position: absolute;
+  //top: 15px;
+  //right: 45px;
 }
 
 .Counter {
-  @include detailsStyle;
-  top: 80px;
-  right: 100px;
+  //@include detailsStyle;
+  //top: 80px;
+  //right: 100px;
   font-size: 30px;
   display: flex;
   justify-content: space-around;
   width: 300px;
+  height: 100px;
+  color: $secondColor;
+  font-family: 'Karla', sans-serif;
+  order: 2;
 }
 
+.Tags {
+  position: absolute;
+  right: 100px;
+  top: 150px;
+  width: 400px;
+  height: 100px;
+}
+
+
 .RightPanel {
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  width: 400px;
+  height: 120px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-around;
 }
 
