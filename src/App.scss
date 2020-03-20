@@ -17,6 +17,14 @@ body {
   background-size: cover;
 }
 
+//.Sticky {
+//  position: -webkit-sticky; /* Safari */
+//  position: sticky;
+//  top: 0;
+//  z-index: 999;
+//  background-color: black;
+//}
+
 .App-clock {
   color: #ffffff;
   height: 100px;
@@ -42,10 +50,18 @@ body {
 
 .Tags {
   position: absolute;
-  right: 100px;
-  top: 150px;
-  width: 400px;
+  right: 10px;
+  top: 160px;
+  width: 500px;
   height: 100px;
+}
+
+.TagsTitle {
+  color: $secondColor;
+  font-family: 'Merienda', cursive;
+  position: absolute;
+  right: 458px;
+  top: 195px;
 }
 
 
@@ -108,30 +124,40 @@ body {
 }
 .Title {
   color: $mainColor;
-  padding-top: 30px;
-  padding-left: 50px;
+  padding-top: 40px;
+  padding-left: 40px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.TitleCode {
+  color: $mainColor;
+  padding-top: 20px;
+  padding-left: 40px;
   font-family: 'Ubuntu', sans-serif;
 }
 
 .CreationDate {
   @include detailsStyle;
-  top: 0;
-  right: 60px;
+  bottom: 0;
+  right: 20px;
   font-size: 20px;
+  text-shadow: 8px 8px 40px black;
+  backdrop-filter: brightness(50%);
+
 }
 
 
 
 .Details-Code {
   @include detailsStyle;
-  right: 70px;
-  top: 45px;
+  left: 20px;
+  top: 90px;
 }
 
 .Details-link {
   @include detailsStyle;
-  left: 20px;
-  bottom: 20px;
+  left: 40px;
+  bottom: 60px;
 }
 
 
@@ -189,7 +215,7 @@ padding-top: 30px;
 
 .List-code {
   width: 600px;
-  height: 500px;
+  height: 550px;
   list-style: none;
 }
 

@@ -5,11 +5,40 @@ import menu from "../img/test3.jpg"
 
 
 export const linkTags = {
-    width: '50px',
+    width: '400px',
+    height: '50px',
+    position: 'absolute',
+    top: '70px',
+    right: '-50px'
 };
 
+
+export const linkTagTitle = {
+    color: 'white',
+    width: '100px',
+    height: '50px',
+    position: 'absolute',
+    top: '10px',
+    right: '120px'
+};
+
+export const codeTagTitle = {
+    color: 'white',
+    width: '100px',
+    height: '50px',
+    position: 'absolute',
+    top: '20px',
+    right: '140px'
+};
+
+
+
 export const codeTags = {
-    width: '150px',
+    width: '400px',
+    height: '50px',
+    position: 'absolute',
+    top: '90px',
+    right: '-30px'
 };
 
 
@@ -78,8 +107,8 @@ export const codeStyle = {
 };
 
 export const editorStyle = ({
-    height: 340,
+    height: 350,
     width: '100%',
     position: 'absolute',
-    bottom: 15,
+    bottom: 30,
 });

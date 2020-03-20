@@ -222,39 +222,42 @@ export default class Main extends React.Component {
 
         return (
             <div>
-                <Welcome />
+                <div className="Sticky">
+                    <Welcome />
 
-                <div className = "Main" style={menuStyle} >
-                    <Form>
-                        <Form.Row>
-                            <Col>
-                                <Form.Control placeholder="Title" onChange={this.handleChangeTitle} />
-                            </Col>
-                            <Col>
-                                <Form.Control placeholder="Description" onChange={this.handleChangeNote}/>
-                            </Col>
-                        </Form.Row>
-                    </Form>
-                    <Select
-                        className="mt-1 col-md-4 col-offset-1"
-                        style = {style}
-                        autoFocus={true}
-                        options = {options} value={this.state.notes.type}
-                        onChange={this.handleChangeType} />
-                    <ButtonToolbar className="CreateBtn">
-                    <Button variant="info" size="lg" onClick={this.addNote}>Create</Button>
-                    </ButtonToolbar>
-                </div>
+                    <div className = "Main" style={menuStyle} >
+                        <Form>
+                            <Form.Row>
+                                <Col>
+                                    <Form.Control placeholder="Title" onChange={this.handleChangeTitle} />
+                                </Col>
+                                <Col>
+                                    <Form.Control placeholder="Description" onChange={this.handleChangeNote}/>
+                                </Col>
+                            </Form.Row>
+                        </Form>
+                        <Select
+                            className="mt-1 col-md-4 col-offset-1"
+                            style = {style}
+                            autoFocus={true}
+                            options = {options} value={this.state.notes.type}
+                            onChange={this.handleChangeType} />
+                        <ButtonToolbar className="CreateBtn">
+                        <Button variant="info" size="lg" onClick={this.addNote}>Create</Button>
+                        </ButtonToolbar>
+                    </div>
 
-                <div className="RightPanel">
-                    <Clock/>
-                    <span className="Counter">
-                        <p>links: <b>{linkCounter}</b> </p>
-                        <p>snippets: <b>{codeCounter}</b></p>
-                    </span>
-                </div>
-                <div className="Tags">
-                <Tags/>
+                    <div className="RightPanel">
+                        <Clock/>
+                        <span className="Counter">
+                            <p>links: <b>{linkCounter}</b> </p>
+                            <p>snippets: <b>{codeCounter}</b></p>
+                        </span>
+                    </div>
+                    <div className="Tags">
+                    <Tags/>
+                    </div>
+                    <h4 className="TagsTitle">Tags:</h4>
                 </div>
                 <Notes class="notes" notes={notes}  remove={this.removeNote} removeTest={this.removeNoteTest}
                 open={this.openLink} handleChangeLink={this.handleChangeLink} handleSave={this.handleSave}/>

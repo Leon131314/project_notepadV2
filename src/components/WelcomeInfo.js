@@ -34,7 +34,7 @@ export default class WelcomeInfo extends React.Component {
                 <Button variant="outline-info" size="sm" className="ShowBtn" onClick={this.showInfo.bind(this)}>{showInstructions}
                 </Button>
                 <h5 className="Welcome-Info" style={showStyle}> In order to <b>Create</b> new <b>Note</b>:<br/><br/>
-                    1) Enter <b>Title</b> and <b>Details/Tag</b>.<br/>
+                    1) Enter <b>Title</b> and <b>Description</b>.<br/>
                     2) <b>Select</b> type of note<br/>
                     3) Click <b>Create</b> button.<br/><br/>
                     When new box appears, enter your <b>Code</b> / <b>Link</b>.<br/>
