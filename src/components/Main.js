@@ -12,6 +12,7 @@ import {menuStyle} from './Styles'
 import Clock from './clock';
 import Tags from './Tags';
 
+//test
 
 export default class Main extends React.Component {
     constructor(props) {
